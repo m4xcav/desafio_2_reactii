@@ -9,7 +9,6 @@ const PHOTO_URL = "/photos.json";
 
 const App = () => {
   const { api, setApi } = useContext(ThemeContext);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,16 +23,20 @@ const App = () => {
         console.error("Error fetching data: ", error);
       }
     };
-
     fetchData();
   }, []);
+  if (api.length === 0) {
+      return <p>Cargando...</p>; // Verificando que api no este vacio
+    }
+  console.log("este es el log de App y la api es :  ")
+console.log(api)
 
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home photos={api} />} />
-        <Route path="/favoritos" element={<Favorites photos={api} />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/favoritos" element={<Favorites/>} />
       </Routes>
     </div>
   );

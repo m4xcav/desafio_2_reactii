@@ -12,3 +12,9 @@ const IconHeart = ({ filled }) => {
   );
 };
 export default IconHeart;
+ {/* {api.map(photo => (
+        <div key={photo.id} className="photo" style={{backgroundImage :`url(${photo.src.tiny})` }}>
+          <IconHeart fill={photo.liked}></IconHeart>
+          <p>{photo.desc}</p>
+        </div>
+      ))} */}
