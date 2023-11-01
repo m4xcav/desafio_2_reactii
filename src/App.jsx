@@ -28,9 +28,6 @@ const App = () => {
   if (api.length === 0) {
       return <p>Cargando...</p>; // Verificando que api no este vacio
     }
-  console.log("este es el log de App y la api es :  ")
-console.log(api)
-
   return (
     <div>
       <Navbar />
